@@ -1,24 +1,22 @@
 package practica1;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class histogram <T>{
+
+    private final Map<T,Integer> map = new HashMap<>();
+
+    public Integer get(Object key) {
+        return map.get(key);
+    }
+
+    public Set<T> keySet() {
+        return map.keySet();
+    }
     
-    private final T[] elVector;
-
-    public HashMap<T ,Integer> gethisto(){
-        HashMap<T, Integer> histogram = new HashMap();
-        for (int i = 0; i < elVector.length; i++) {
-            if(!histogram.containsKey(elVector[i])){
-                histogram.put(elVector[i], 0);
-            }
-            histogram.put(elVector[i], histogram.get(elVector[i])+1);
-        }
-        return histogram;
+    public Integer increment (T key){
+        return map.put(key, map.containsKey(key)? map.get(key)+1 :1);
     }
-
-    public histogram(T[] elVector) {
-        this.elVector = elVector;
-    }
-
 }
