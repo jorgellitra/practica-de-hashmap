@@ -2,12 +2,12 @@ package practica1;
 
 import java.util.HashMap;
 
-public class histogram <T> {
+public class histogram {
     
-    private final T[] elVector;
+    private final int[] elVector;
 
-    public HashMap<T, Integer> gethisto(){
-        HashMap<T, Integer> histogram = new HashMap();
+    public HashMap<Integer, Integer> gethisto(){
+        HashMap<Integer, Integer> histogram = new HashMap();
         for (int i = 0; i < elVector.length; i++) {
             if(!histogram.containsKey(elVector[i])){
                 histogram.put(elVector[i], 0);
@@ -17,8 +17,11 @@ public class histogram <T> {
         return histogram;
     }
 
-    public histogram(T[] elVector) {
+    public int[] getElVector() {
+        return elVector;
+    }
+
+    public histogram(int[] elVector) {
         this.elVector = elVector;
     }
-    
 }
