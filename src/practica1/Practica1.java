@@ -5,8 +5,9 @@ import java.util.HashMap;
 public class Practica1 {
 
     public static void main(String[] args) {
-        int[] vector = {1,1,1,4,4,2,2,2,100};
-        histogram mihisto = new histogram(vector);
+        Integer[] vector = {1,1,1,4,4,2,2,2,100};
+        String[] vector1 = {"Ana", "Juan", "Pedro", "Ana","Ana", "Juan", "Pedro", "Ana"};
+        histogram mihisto = new histogram(vector1);
         HashMap <Integer,Integer> histogram = mihisto.gethisto();
         System.out.println(histogram);
     }
